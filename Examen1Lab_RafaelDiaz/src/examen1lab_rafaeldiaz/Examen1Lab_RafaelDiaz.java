@@ -157,7 +157,12 @@ public class Examen1Lab_RafaelDiaz {
                                                 }
                                                 break;
                                             case 2:
-                                                
+                                                for (int q = 0; q < usuarios.get(i).getPusuarios().get(cual).getArchivos().size(); q++) {
+                                                    System.out.println(q+" "+usuarios.get(i).getPusuarios().get(cual).getArchivos().get(q));
+                                                }
+                                                System.out.println("Que archivo desea modificar?");
+                                                int archive = sc.nextInt();
+                                                System.out.println(usuarios.get(i).getPusuarios().get(cual).getArchivos().get(archive));
                                                 break;
                                             case 3:
                                                 System.out.println("Que archivo desea eliminar?");
