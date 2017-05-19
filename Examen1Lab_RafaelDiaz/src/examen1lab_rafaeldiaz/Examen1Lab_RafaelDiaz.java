@@ -18,7 +18,8 @@ public class Examen1Lab_RafaelDiaz {
     static String password;
     //proyecto
     static String nombrep;
-    static int commits;
+    static int commits=0;
+    static String comando;
     //archivos
     static String nombrea;
     static int tamano;
@@ -41,11 +42,13 @@ public class Examen1Lab_RafaelDiaz {
                     sc = new Scanner(System.in);
                     System.out.println("Ingrese su nombre");
                     nombreu = sc.nextLine();
+                    sc = new Scanner(System.in);
                     System.out.println("Ingrese su edad");
                     edad = sc.nextInt();
                     sc = new Scanner(System.in);
                     System.out.println("ingrese su profesion");
                     profesion = sc.nextLine();
+                    sc = new Scanner(System.in);
                     System.out.println("Ingrese su username");
                     username = sc.next();
                     System.out.println("Ingrese su contraseña");
@@ -84,10 +87,13 @@ public class Examen1Lab_RafaelDiaz {
                     }
                     break;
                 case 5:
+                    sc = new Scanner(System.in);
                     System.out.println("Ingrese su username");
                     username = sc.next();
+                    sc = new Scanner(System.in);
                     System.out.println("Ingrese su password");
                     password = sc.next();
+                    sc = new Scanner(System.in);
                     for (int i = 0; i < usuarios.size(); i++) {
                         if (usuarios.get(i).getUsername().equals(username)) {
                             if (usuarios.get(i).getPassword().equals(password)) {
@@ -103,7 +109,7 @@ public class Examen1Lab_RafaelDiaz {
                                         sc = new Scanner(System.in);
                                         System.out.println("Ingrese nombre del proyecto");
                                         nombrep = sc.nextLine();
-                                        
+                                        sc = new Scanner(System.in);
                                         for (int j = 0; j < usuarios.size(); j++) {
                                             System.out.println(i+" "+usuarios.get(j));
                                         }
@@ -114,6 +120,7 @@ public class Examen1Lab_RafaelDiaz {
                                             int numcol = sc.nextInt();
                                             usuarios.get(i).getPusuarios().add(new Proyecto(nombrep));
                                             usuarios.get(i).getPusuarios().get(usuarios.get(i).getPusuarios().size()-1).getUsuarios().add(usuarios.get(numcol));
+                                            usuarios.get(numcol).getPusuarios().add(usuarios.get(i).getPusuarios().get(usuarios.get(i).getPusuarios().size()-1));
                                         }
                                         
                                         break;
@@ -140,15 +147,35 @@ public class Examen1Lab_RafaelDiaz {
                                                 System.out.println("1. Carpeta\n2. Archivos de texto");
                                                 int arc = sc.nextInt();
                                                 if (arc==1) {
-                                                    
+                                                    usuarios.get(i).getPusuarios().get(cual).getArchivos().add(new Carpetas());
                                                 } else {
+                                                    sc = new Scanner(System.in);
+                                                    System.out.println("Ingrese texto que desea guardar");
+                                                    texto = sc.nextLine();
+                                                    sc = new Scanner(System.in);
+                                                    usuarios.get(i).getPusuarios().get(cual).getArchivos().add(new Atexto(texto));
                                                 }
                                                 break;
                                             case 2:
+                                                
                                                 break;
                                             case 3:
+                                                System.out.println("Que archivo desea eliminar?");
+                                                    int elimarc = sc.nextInt();
+                                                    usuarios.get(i).getPusuarios().get(cual).getArchivos().remove(elimarc);
                                                 break;
                                             case 4:
+                                                sc = new Scanner(System.in);
+                                                System.out.println("Ingrese comando");
+                                                comando = sc.nextLine();
+                                                sc = new Scanner(System.in);
+                                                if (comando.equals("meow push")) {
+                                                    System.out.println("Pushed exitosamente");
+                                                    commits ++;
+                                                    usuarios.get(i).getPusuarios().get(cual).setCommits(commits);
+                                                } else {
+                                                    System.out.println("Comando invalido");
+                                                }
                                                 break;
                                             case 5:
                                                 break;
