@@ -15,6 +15,7 @@ public class Carpetas extends Archivos{
     ArrayList<Archivos> archivos = new ArrayList();
 
     public Carpetas() {
+        super();
     }
 
     public ArrayList<Archivos> getArchivos() {

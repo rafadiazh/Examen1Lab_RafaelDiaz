@@ -25,6 +25,7 @@ public class Examen1Lab_RafaelDiaz {
     static int tamano;
     //Archivos de texto
     static String texto;
+    static int archive;
 
     /**
      * @param args the command line arguments
@@ -161,8 +162,10 @@ public class Examen1Lab_RafaelDiaz {
                                                     System.out.println(q+" "+usuarios.get(i).getPusuarios().get(cual).getArchivos().get(q));
                                                 }
                                                 System.out.println("Que archivo desea modificar?");
-                                                int archive = sc.nextInt();
+                                                archive = sc.nextInt();
                                                 System.out.println(usuarios.get(i).getPusuarios().get(cual).getArchivos().get(archive));
+                                                
+                                                        
                                                 break;
                                             case 3:
                                                 System.out.println("Que archivo desea eliminar?");
@@ -183,6 +186,7 @@ public class Examen1Lab_RafaelDiaz {
                                                 }
                                                 break;
                                             case 5:
+                                                System.out.println(usuarios.get(i).getPusuarios().get(cual).getArchivos().get(archive-1));
                                                 break;
                                             default:
                                                 break;

@@ -17,6 +17,7 @@ public class Atexto extends Archivos{
     }
 
     public Atexto() {
+        super();
     }
 
     public String getTexto() {
