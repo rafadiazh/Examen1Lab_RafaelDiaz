@@ -5,6 +5,8 @@
  */
 package examen1lab_rafaeldiaz;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Rafael
@@ -15,6 +17,7 @@ public class Usuarios {
     String profesion;
     String username;
     String password;
+    ArrayList<Proyecto> pusuarios= new ArrayList();
 
     public Usuarios(String nombre, int edad, String profesion, String username, String password) {
         this.nombre = nombre;
@@ -67,6 +70,14 @@ public class Usuarios {
         this.password = password;
     }
 
+    public ArrayList<Proyecto> getPusuarios() {
+        return pusuarios;
+    }
+
+    public void setPusuarios(ArrayList<Proyecto> pusuarios) {
+        this.pusuarios = pusuarios;
+    }
+    
     @Override
     public String toString() {
         return "Usuarios{" + "nombre=" + nombre + ", edad=" + edad + ", profesion=" + profesion + ", username=" + username + ", password=" + password + '}';

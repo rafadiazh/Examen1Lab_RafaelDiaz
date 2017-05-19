@@ -14,12 +14,12 @@ import java.util.ArrayList;
 public class Proyecto {
     String nombre;
     ArrayList<Archivos> archivos = new ArrayList();
-    ArrayList<Usuarios> usuarios = new ArrayList();
+    ArrayList<Usuarios> colaboradores = new ArrayList();
     int commits;
 
-    public Proyecto(String nombre, int commits) {
+    public Proyecto(String nombre) {
         this.nombre = nombre;
-        this.commits = commits;
+        
     }
 
     public String getNombre() {
@@ -39,11 +39,11 @@ public class Proyecto {
     }
 
     public ArrayList<Usuarios> getUsuarios() {
-        return usuarios;
+        return colaboradores;
     }
 
     public void setUsuarios(ArrayList<Usuarios> usuarios) {
-        this.usuarios = usuarios;
+        this.colaboradores = usuarios;
     }
 
     public int getCommits() {
@@ -56,7 +56,7 @@ public class Proyecto {
 
     @Override
     public String toString() {
-        return "Proyecto{" + "nombre=" + nombre + ", archivos=" + archivos + ", usuarios=" + usuarios + ", commits=" + commits + '}';
+        return "Proyecto{" + "nombre=" + nombre + ", archivos=" + archivos + ", colaboradores=" + colaboradores + ", commits=" + commits + '}';
     }
     
 }
