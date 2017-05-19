@@ -112,10 +112,11 @@ public class Examen1Lab_RafaelDiaz {
                                         nombrep = sc.nextLine();
                                         sc = new Scanner(System.in);
                                         for (int j = 0; j < usuarios.size(); j++) {
-                                            System.out.println(i+" "+usuarios.get(j));
+                                            System.out.println(j+" "+usuarios.get(j));
                                         }
                                         System.out.println("Cuantos colaboradores desea agregar?");
                                         int col= sc.nextInt();
+                                        if(col>usuarios.size()){
                                         for (int j = 0; j < col; j++) {
                                             System.out.println("Que colaborador desea agregar?");
                                             int numcol = sc.nextInt();
@@ -123,7 +124,9 @@ public class Examen1Lab_RafaelDiaz {
                                             usuarios.get(i).getPusuarios().get(usuarios.get(i).getPusuarios().size()-1).getUsuarios().add(usuarios.get(numcol));
                                             usuarios.get(numcol).getPusuarios().add(usuarios.get(i).getPusuarios().get(usuarios.get(i).getPusuarios().size()-1));
                                         }
-                                        
+                                        }else{
+                                            System.out.println("No hay suficientes colaboradores broo");
+                                        }
                                         break;
                                     case 2:
                                         for (int k = 0; k < usuarios.get(i).getPusuarios().size(); k++) {
@@ -186,7 +189,12 @@ public class Examen1Lab_RafaelDiaz {
                                                 }
                                                 break;
                                             case 5:
-                                                System.out.println(usuarios.get(i).getPusuarios().get(cual).getArchivos().get(archive-1));
+                                                
+                                                if (usuarios.get(i).getPusuarios().get(cual).getArchivos().size()>0) {
+                                                    System.out.println(usuarios.get(i).getPusuarios().get(cual).getArchivos().get(archive-1));
+                                                } else {
+                                                    System.out.println("Ya no puede regresar");
+                                                }
                                                 break;
                                             default:
                                                 break;
